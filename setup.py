@@ -5,21 +5,22 @@ def read(fname):
     return open(os.path.join(os.path.dirname(__file__), fname)).read()
 
 setup(
-    name='Flask-Static',
+    name='Flask-StaticS3',
     version='1.0',
-    url='http://github.com/brainfire/flask-s3',
+    url='http://github.com/brainfire/flask-statics3',
     license='BSD',
     author='Zakaria Zajac',
     author_email='zak@brainfi.re',
     description='An extension that helps flask utilize '
                 's3 for static files and uploads.',
     long_description=read('README.md'),
-    packages=['flask_static'],
+    packages=['flask_statics3'],
     zip_safe=False,
     include_package_data=True,
     platforms='any',
     install_requires=[
         'Flask>=0.8',
+        'Flask-Script>=0.5.1',
 		'boto>=2.6.0'
     ],
     classifiers=[
