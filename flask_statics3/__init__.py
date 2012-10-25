@@ -58,11 +58,12 @@ def get_bucket(app):
     
 def upload(app, static_files):
     bucket = get_bucket(app)
-    bucket.set_acl('public-read')
     
     if not bucket:
         raise ValueError("S3_BUCKET does not exist")
     
+    bucket.set_acl('public-read')
+
     for (asset_url, asset_loc) in static_files:
         print("Copying '{}'".format(asset_loc))
         
